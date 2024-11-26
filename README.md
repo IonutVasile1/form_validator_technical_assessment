@@ -49,38 +49,18 @@ test/
 
 ### Getting Started
 
-•	Please disable any AI Coding Assisstant
 •	Review the existing code to understand the current implementation
-•	Please work through these tasks in order
 •	You can use documentation and online resources
 •	It's ok if you don't complete all the tasks
 •	Focus on writing clean, maintainable code
 •	Focus on communicating and explaining your though process
 •	Feel free to ask questions at any point
+•	Please work through these tasks in order
 
 
 
 
-### Task 1: Implement Form Submit Loading State
-
-__As a__ user filling out the registration form
-__I want to__ see visual feedback when my form is being submitted
-__So that__ I know the application is processing my registration
-
-#### Description
-
-The form submit button should provide visual feedback during form submission by displaying a loading indicator and becoming disabled.
-
-#### Acceptance Criteria
-
-1. Button shows a loading spinner when form is being submitted
-2. Button is disabled during submission
-3. Loading state is cleared after submission completes
-
-
-
-
-### Task 2: Fix Password Validation
+### Task 1: Fix Password Validation
 
 __As a__ system administrator
 __I want to__ ensure users create strong passwords
@@ -105,6 +85,25 @@ The current password validation is not enforcing security requirements. Implemen
 'pass' -> invalid (too short)
 'PASSWORD123' -> invalid (no special char)
 ```
+
+
+
+
+### Task 2: Implement Form Submit Loading State
+
+__As a__ user filling out the registration form
+__I want to__ see visual feedback when my form is being submitted
+__So that__ I know the application is processing my registration
+
+#### Description
+
+The form submit button should provide visual feedback during form submission by displaying a loading indicator and becoming disabled.
+
+#### Acceptance Criteria
+
+1. Button shows a loading spinner when form is being submitted
+2. Button is disabled during submission
+3. Loading state is cleared after submission completes
 
 
 

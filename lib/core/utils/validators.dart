@@ -28,4 +28,7 @@ class Validators {
 
     return null;
   }
+
+  static String? validateFirstName(String? value) => null;
+  static String? validateLastName(String? value) => null;
 }

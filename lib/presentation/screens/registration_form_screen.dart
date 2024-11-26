@@ -12,6 +12,8 @@ class RegistrationFormScreen extends StatefulWidget {
 
 class _RegistrationFormScreenState extends State<RegistrationFormScreen> {
   final _formKey = GlobalKey<FormState>();
+  final _firstNameController = TextEditingController();
+  final _lastNameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
@@ -28,6 +30,18 @@ class _RegistrationFormScreenState extends State<RegistrationFormScreen> {
           child: Column(
             children: [
               CustomTextField(
+                controller: _firstNameController,
+                label: 'First name',
+                validator: Validators.validateFirstName,
+              ),
+              const SizedBox(height: 16),
+              CustomTextField(
+                controller: _lastNameController,
+                label: 'Last name',
+                validator: Validators.validateLastName,
+              ),
+              const SizedBox(height: 16),
+              CustomTextField(
                 controller: _emailController,
                 label: 'Email',
                 validator: Validators.validateEmail,
@@ -40,7 +54,9 @@ class _RegistrationFormScreenState extends State<RegistrationFormScreen> {
                 obscureText: true,
               ),
               const SizedBox(height: 24),
-              FormSubmitButton(onPressed: _handleSubmit),
+              FormSubmitButton(
+                onPressed: _handleSubmit,
+              ),
             ],
           ),
         ),
@@ -49,7 +65,10 @@ class _RegistrationFormScreenState extends State<RegistrationFormScreen> {
   }
 
   Future<void> _handleSubmit() async {
-    await Future.delayed(const Duration(seconds: 2));
+    // Uncomment the line below to simulate a delay
+    // await Future.delayed(const Duration(seconds: 2));
+
+    // Validate form
     final isValid = _formKey.currentState?.validate() ?? false;
 
     if (isValid) {
@@ -59,7 +78,11 @@ class _RegistrationFormScreenState extends State<RegistrationFormScreen> {
       _formKey.currentState?.reset();
       // show confirmation snackbar
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Form submitted')),
+        const SnackBar(
+          content: Text('Form submitted'),
+          behavior: SnackBarBehavior.floating,
+          backgroundColor: Colors.green,
+        ),
       );
     }
   }
